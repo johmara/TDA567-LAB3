@@ -26,3 +26,15 @@ method Abs(x : int) returns (y : int)
     Q ==> wp(S,R) ->
     None ==> wp( if(x < 0) then {y := -x} else {y := x }, (0 <= x ==> y == x) && (x < 0 ==> y == -x) && (0 <= y)) ->
                 Conditional rule and assignment rule
+
+    Conditional rule:
+    ((x < 0) -> wp({y := -x}, (0 <= x ==> y == x) && (x < 0 ==> y == -x) && (0 <= y))) &&
+    ((0 <= x) -> wp({y := x}, (0 <= x ==> y == x) && (x < 0 ==> y == -x) && (0 <= y)))
+
+    Assignment rule:
+    (x < 0 ==> y := -x) && (0 <= x ==> y := x) = true && true = true
+
+3:
+
+
+*/
