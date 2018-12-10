@@ -55,7 +55,19 @@ The postcondition wont hold because you can't ensure that big is greater than sm
     }
 
 3:
+    It is possible by adding an else wich assigns dummy values if x and y are equal however that would defeat the
+    purpose of the program.
 
-
+    Example:
+    method Q2(x : int, y : int) returns (big : int, small : int)
+          ensures big >= small;
+        {
+          if (x > y)
+           {big, small := x, y;}
+          else if (x < y)
+           {big, small := y, x;}
+          else
+           {big, small := 1, 0}
+        }
 
 */
