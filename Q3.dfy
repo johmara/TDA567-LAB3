@@ -158,7 +158,7 @@ Postcondition Holds after loop: (Q)
 	= 
 	
 	1.(n0 >= 0 ==> (res == m * ( n0 ) && m ==  m0)) && 
-    2.(n0 <  0 ==> (res == m * (-n0 ) && m == -m0)) && 
+        2.(n0 <  0 ==> (res == m * (-n0 ) && m == -m0)) && 
  	   n == 0 ==> (res = n0 * m0)
 	
 	By fullfilling n == 0 ->
