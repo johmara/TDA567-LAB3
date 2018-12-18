@@ -1,4 +1,4 @@
-Question 3: Correct program AND missing specs!
+//Question 3: Correct program AND missing specs!
 
 method Q3(n0 : int, m0 : int) returns (res : int)
   
