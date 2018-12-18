@@ -115,27 +115,27 @@ Sequential:
 	
 Assignment: Inner assignment first (n := n - 1)
 	(0 < n && I) ==> wp(res := res + m,
-			n0 >= 0 ==> (res == m * ( n0 - (n - 1)) && m ==  m0) &&
-			n0 <  0 ==> (res == m * (-n0 - (n - 1)) && m == -m0) &&
-			n - 1 >= 0)
+		n0 >= 0 ==> (res == m * ( n0 - (n - 1)) && m ==  m0) &&
+		n0 <  0 ==> (res == m * (-n0 - (n - 1)) && m == -m0) &&
+		n - 1 >= 0)
 
 Assignment: Res assignment (res := res + m)
 	(0 < n && I) ==>
-			n0 >= 0 ==> (res + m == m * ( n0 - (n - 1)) && m ==  m0) &&
-			n0 <  0 ==> (res + m == m * (-n0 - (n - 1)) && m == -m0) &&
-			n - 1 >= 0);
+		n0 >= 0 ==> (res + m == m * ( n0 - (n - 1)) && m ==  m0) &&
+		n0 <  0 ==> (res + m == m * (-n0 - (n - 1)) && m == -m0) &&
+		n - 1 >= 0);
 	=  
-			n0 >= 0 ==> (res == m * ( n0 - n ) && m ==  m0) &&
-			n0 <  0 ==> (res == m * (-n0 - n ) && m == -m0) &&
-			n - 1 >= 0);
+		n0 >= 0 ==> (res == m * ( n0 - n ) && m ==  m0) &&
+		n0 <  0 ==> (res == m * (-n0 - n ) && m == -m0) &&
+		n - 1 >= 0);
 	
 		n0 >= 0 ==> (res == m * ( n0 - n ) && m ==  m0) && // Invariant statement
 		n0 <  0 ==> (res == m * (-n0 - n ) && m == -m0) && // Invariant statement
 		n - 1 >= 0 //To do new iteration n must be >= 1'
 		
 		==> n0 >= 0 ==> (true && true) && // Invariant statement
-			n0 <  0 ==> (true && true) && // Invariant statement
-			n - 1 >= 0 //To do new iteration n must be >= 1 true
+		    n0 <  0 ==> (true && true) && // Invariant statement
+		    n - 1 >= 0 //To do new iteration n must be >= 1 true
 			
 ---------------------------------------------------------------			
 Postcondition Holds after loop: (Q)
@@ -145,16 +145,15 @@ Postcondition Holds after loop: (Q)
 	=
 	
 	(n0 >= 0 ==> (res == m * ( n0 - n) && m ==  m0)) &&
-    (n0 <  0 ==> (res == m * (-n0 - n) && m == -m0)) &&
-     n >= 0 && 0 >= n  ==> (res = n0 * m0)
+        (n0 <  0 ==> (res == m * (-n0 - n) && m == -m0)) &&
+        n >= 0 && 0 >= n  ==> (res = n0 * m0)
 	  
-	 n >= 0 && 0 >= n // simplify n==0
-	 
+        {n >= 0 && 0 >= n // simplify n==0}
 	=
 	
 	(n0 >= 0 ==> (res == m * ( n0 - n) && m ==  m0)) &&
-    (n0 <  0 ==> (res == m * (-n0 - n) && m == -m0)) &&
-     n == 0  ==> (res = n0 * m0)
+        (n0 <  0 ==> (res == m * (-n0 - n) && m == -m0)) &&
+        n == 0  ==> (res = n0 * m0)
 		
 	= 
 	
