@@ -12,34 +12,10 @@ method Q2(x : int, y : int) returns (big : int, small : int)
 /*
 The postcondition wont hold because you can't ensure that big is greater than small, EX: if x = y big wont be greater.
 
-    Q: None
-    R: big > small
-    S: if (x > y) then {big, small := x, y;} else {big, small := y, x;}
+Q: None
+R: big > small
+S: if (x > y) then {big, small := x, y;} else {big, small := y, x;}
 
-	Apply Seq-rule:
-	
-	wp(if (x > y) then {big, small := x, y;} else {big, small := y, x;},R)
-	
-		 
-	Apply Conditional-rule:
-	
-	x > y  ==> wp(big, small := x, y, R) && 
-	x <= y ==> wp(big, small := y, x, R) 
-	
-	
-	Apply Assignment to the if-branch:
-
-	x > y ==> wp(big := x , wp(small := y, R))
-	x > y ==> big > small
-	
-	Apply Assignment to the else-branch:
-	
-	x <= y ==> wp(big := y , wp(small := x, R))
-	x <= y ==> big <= small
-
-	This shows that if the inputs are equal the program will fail.
-	
-----------------------------------------------------------------------------------------------------------------------
 Q ==> wp(S,R) ->
     Q ==> wp (S,R) ->
     None ==> wp( if (x > y) then {big, small := x, y;} else {big, small := y, x;} , big > small)
@@ -50,7 +26,9 @@ Q ==> wp(S,R) ->
     ((x <= y) -> wp({big, small := y, x;},(big > small)))
 
     Assignment rule:
-    (x > y ==> big, small := x, y) && (x <= y ==> big, small := y, x) = true && false = false
+    (x > y ==> x > y) && (x <= y ==> x < y)
+   
+    = true && false = false
 
     This shows that if the inputs are equal the program will fail.
 
