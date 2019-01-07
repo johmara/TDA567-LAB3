@@ -83,7 +83,7 @@ Sequential Rule:
 
 wp(S1,wp(S2,R))
 
-While-loop
+While-loop, 
 -------------------------------------------------------
 wp(while B I D S, R)
 
