@@ -38,7 +38,6 @@ method Abs(x : int) returns (y : int)
 
 3:
     Since the purpose of the abs method is that it should calculate and return an absolute of the number inserted we do
-    not need to mutate the in-parameter, we just assign what should be returned to a local variable instead. This means
-    that a function could have been used instead of a method, therefore it's a design mistake.
-
+    not need to mutate the in-parameter or modify any values. Therefor a function is more suitable since they are the 
+    implementation of "pure methods".
 */
