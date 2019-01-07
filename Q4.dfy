@@ -168,7 +168,7 @@ method ComputeFact(n : nat) returns (res : nat)
 
 
 
-    ** Prove variant bounded below by zero
+    ** Prove variant bounded below zero
 
       I ==> D >= 0
 
